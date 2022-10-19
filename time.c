@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <time.h>
-#include <string.h>
 #define PI 3.14
-#define r 90
 
-//function prototypes
+
+//Function prototypes
 int seconds_x(int s);
 int seconds_y(int s);
 int minutes_x(int m, int s);
@@ -14,17 +12,14 @@ int minutes_y(int m, int s);
 int hours_x(int h, int m);
 int hours_y(int h, int m);
 
-int main(int argc, char *argv[]) {
-    // Get data from command line arguements
-    int hour = atoi(argv[1]);
-    int min = atoi(argv[2]);
-    int sec = atoi(argv[3]);
+//Radius of the clock
+int r = 90;
 
-    // Return 1 if time not given
-    if ( argc <= 2 ) {
-        printf("format: HH MM SS");
-        return 1;
-    }
+int main(void) {
+    //Get time from user
+    int hour, min, sec;
+    printf("Enter time (HH MM SS): ");
+    scanf("%i %i %i", &hour, &min, &sec);
 
     //Create a clock SVG file
     FILE *clock = fopen("clock.svg", "w");
