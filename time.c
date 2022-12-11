@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define PI 3.14
 
 
 //Function prototypes
@@ -14,6 +13,9 @@ int hours_y(int h, int m);
 
 //Radius of the clock
 int r = 90;
+
+//Value of pi
+const double PI = 3.14;
 
 int main(void) {
     //Get time from user
@@ -93,6 +95,7 @@ int hours_y(int h, int m) {
     double y = cos(rad) * r/2;
     return -y;
 }
+
 
 
 
